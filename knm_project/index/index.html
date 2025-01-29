@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNM Construction Tax Invoice</title>
+    <link rel="stylesheet" href="index.css">
+
+   
+</head>
+
+<body>
+    <div class="container">
+        <!-- Invoice Header -->
+        <div class="header">
+            <h1>TAX INVOICE</h1>
+        </div>
+
+        <!-- Company Details -->
+        <div class="company-details">
+            <h2>M/S KNM CONSTRUCTION & DEVELOPMENT</h2>
+            <p>Office: Infront of St. Oxford School, Goutam Nagar, Thatipur Morar, Gwalior (M.P.)</p>
+            <p>Address: 34, Hastinapur, Morar, Gwalior (M.P.) - 475002</p>
+            <p>PAN CARD NO: BFWPC3487B</p>
+            <p>GST NO: 23BFWPC3487B2ZG</p>
+            <p>Phone: +91 9713171927, 8319641536</p>
+            <p>Email: knm151022@gmail.com</p>
+        </div>
+
+        <!-- Invoice Form -->
+        <form id="invoiceForm">
+            <!-- Invoice Info -->
+            <div class="invoice-info">
+                <div class="invoice-container">
+                    <label for="invoice">Invoice No:</label>
+                    <input type="number" id="invoice" name="invoice" required class="invoice-input">
+                    <br>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <br>
+
+                    <label for="stateCode">State Code:</label>
+                    <input type="number" id="stateCode" name="stateCode" required>
+                    <br>
+
+                    <label for="remarks" class="remarks">Remarks:</label>
+                    <textarea cols="25" rows="5" type="text" id="remarks" name="remarks" required> </textarea>
+                    <br>
+
+                </div>
+
+                <!-- Receiver Details -->
+                <div class="receiver-details">
+                    <h3 class="invoice-heading"> Details of Receiver (Billed To)</h3>
+                    <label for="gstNo">GST NO:</label>
+                    <input type="text" id="gstNo" name="gstNo" required>
+                    <br>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <br>
+                </div>
+            </div>
+
+
+
+            <!-- Items Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.NO.</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Rate</th>
+                        <th>CGST %</th>
+                        <th>SGST %</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                    <tr>
+                        <td class="serial-number">1</td>
+
+                        <td><input type="text" class="item-description" placeholder="Enter Description" required></td>
+                        <td><input type="number" class="item-quantity" placeholder="Enter Quantity" required></td>
+                        <td><input type="text" class="item-unit" placeholder="Enter Unit" required></td>
+                        <td><input type="number" class="item-rate" placeholder="Enter Rate" required></td>
+                        <td><input type="number" class="cgst" placeholder="CGST %" required></td>
+                        <td><input type="number" class="sgst" placeholder="SGST %" required></td>
+                        <td><input type="number" class="item-amount" placeholder="Amount" disabled></td>
+                        <td><button type="button" class="removeRowButton">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="addRowButton">Add Row</button>
+
+
+
+            <div class="tax-calculation">
+                <h3>Total After Tax: <span class="normal-text" id="totalAfterTax">0.00</span></h3>
+                <h3>Rs.(In words): <span class="normal-text" id="totalInWords">Zero</span></h3>
+            </div>
+
+            <style>
+                .normal-text {
+                    font-weight: normal;
+                    /* Ensures the value is not bold */
+                    font-size: 14px;
+                    /* Adjusts the font size for the values */
+                }
+
+                h3 {
+                    font-weight: bold;
+                    /* Makes the headings bold */
+                    font-size: 16px;
+                    /* Adjusts the font size for the headings */
+                }
+            </style>
+
+            <div class="terms-container">
+                <div class="terms">
+                    <h3>Terms & Conditions</h3>
+                    <ol>
+                        <li>Goods once sold will not be taken back.</li>
+                        <li>Warranty as per company norms.</li>
+                        <li>Payment 100% advance.</li>
+                    </ol>
+                </div>
+                <div class="bank-details">
+                    <h3>Bank Details</h3>
+                    <ol>
+                    <li>Bank Name: SBI BANK</li>
+                    <li>Bank A/C: 41924141685</li>
+                    <li>Bank IFSC: SBIN0004352</li>
+                    <li>Branch Name: City Center Gwalior</li>
+                </ol>
+                </div>
+            </div>
+
+            <div class="bank-footer-wrapper">
+
+                <div class="footer">
+                    <p>For: M/S KNM CONSTRUCTION & DEVELOPMENT</p>
+                    <p class="right-align">Authorized Signatory</p>
+                </div>
+
+
+                <!-- Action Buttons -->
+                <button type="submit">Submite Bill</button>
+                <button type="button" id="downloadPdfButton">Download</button>
+        </form>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+
+</html>

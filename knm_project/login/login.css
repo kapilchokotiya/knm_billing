@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: right; /* Adjust alignment of content */
+    align-items: top;
+    height: 80vh; /* Full viewport height */
+    width: 100%;
+    /* Full viewport width */
+    margin: 0;
+    background-image: url('constructionphoto.jpg'); /* Use your construction photo */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: left; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+   /* background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.welcome-message {
+    font-size: 24px; /* Increase the font size for prominence */
+    font-weight: bold;
+    color: #fff; /* White text color for contrast */
+    text-align: center;
+    margin-bottom: 30px; /* Add more space below the welcome message */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add a subtle text shadow for readability */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.05); /* Slightly reduce the transparency for better readability */
+    padding: 25px; /* Increase padding for a more spacious feel */
+    border-radius: 12px; /* Slightly rounder corners for a modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add a stronger shadow for depth */
+    width: 320px; /* Increase width slightly */
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 22px; /* Slightly larger font for the title */
+    color: #333; /* Darker color for better contrast against the background */
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding for comfort */
+    margin: 12px -20px;
+    border: 1px solid #bbb; /* Use a lighter border for a cleaner look */
+    border-radius: 6px;
+    font-size: 16px; /* Increase font size for accessibility */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #2ecc71; /* Maintain green for consistency */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Match the rounded corners with input fields */
+    cursor: pointer;
+    font-size: 16px; /* Larger text for the button */
+    transition: 0.3s; /* Add smooth transition on hover */
+}
+
+.login-container button:hover {
+    background: #27ae60; /* Darker green on hover */
+}
+
+.error-message {
+    color: red; /* Keep red for error visibility */
+    font-size: 14px; /* Standardize error message size */
+    margin: 10px 0;
+}

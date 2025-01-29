@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css"> <!-- Link to the external CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <p></p>
+    </div>
+
+    <div class="login-container">
+        <p>KNM CONSTRUCTION & DEVELOPMENT</p>
+        <!--<h1>Login</h1>-->
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <p class="error-message" id="errorMessage"></p>
+        <button id="loginButton">Login</button>
+    </div>
+     
+    <script>
+        // Predefined user credentials
+        const validUsername = "admin"; 
+        const validPassword = "12345"; 
+
+        document.getElementById("loginButton").addEventListener("click", function () {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === validUsername && password === validPassword) {
+                // Save login state to local storage
+                localStorage.setItem("isLoggedIn", "true");
+                // Redirect to the index page after login
+                window.location.href = "../welcome/Welcomepage.html";
+
+                // window.location.href = "index.html"; // Redirects to index.html after successful login
+            } else {
+                // Show error message if credentials are invalid
+                document.getElementById("errorMessage").textContent = "Invalid username or password";
+            }
+        });
+    </script>
+</body>
+</html>
